@@ -1,0 +1,2203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlaygroundStack should create resources 1`] = `
+Object {
+  "Mappings": Object {
+    "rdsPlaygroundserverInstanceAmiMap7A57CF60": Object {
+      "eu-west-2": Object {
+        "ami": "ami-0440d46c51f4e0817",
+      },
+    },
+  },
+  "Outputs": Object {
+    "RdsPLaygroundRdsConstructrdsEndpointA5D7198A": Object {
+      "Description": "rds endpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "RdsPLaygroundRdsConstructrdsPlaygroundrds30059AB2",
+          "Endpoint.Address",
+        ],
+      },
+    },
+    "rdsPlaygroundappS3bucketName": Object {
+      "Description": "rdsPlayground-appS3-bucketName",
+      "Value": Object {
+        "Ref": "rdsPlaygroundappS3DE888E68",
+      },
+    },
+    "rdsPlaygroundbastionInstanceoutput": Object {
+      "Description": "endpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "rdsPlaygroundbastionInstance8FB741DF",
+          "PublicDnsName",
+        ],
+      },
+    },
+    "rdsPlaygroundserverInstanceoutput": Object {
+      "Description": "endpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "rdsPlaygroundserverInstance53B81CB0",
+          "PublicDnsName",
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6ArtifactHashAFBF80C1": Object {
+      "Description": "Artifact hash for asset \\"74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6\\"",
+      "Type": "String",
+    },
+    "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4": Object {
+      "Description": "S3 bucket for asset \\"74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6\\"",
+      "Type": "String",
+    },
+    "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3VersionKey7D4DBC50": Object {
+      "Description": "S3 key for asset version \\"74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6\\"",
+      "Type": "String",
+    },
+    "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfArtifactHash85F58E48": Object {
+      "Description": "Artifact hash for asset \\"c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf\\"",
+      "Type": "String",
+    },
+    "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3Bucket55EFA30C": Object {
+      "Description": "S3 bucket for asset \\"c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf\\"",
+      "Type": "String",
+    },
+    "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70": Object {
+      "Description": "S3 key for asset version \\"c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3": Object {
+      "Description": "Artifact hash for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7": Object {
+      "Description": "S3 bucket for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F": Object {
+      "Description": "S3 key for asset version \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": Object {
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2",
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+    },
+  },
+  "Resources": Object {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": Object {
+      "DependsOn": Array [
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3Bucket55EFA30C",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.handler",
+        "Layers": Array [
+          Object {
+            "Ref": "RdsPLaygroundDeployAppAwsCliLayer75473561",
+          },
+        ],
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.6",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4",
+                      },
+                    ],
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4",
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "rdsPlaygroundappS3DE888E68",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "rdsPlaygroundappS3DE888E68",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "Roles": Array [
+          Object {
+            "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "RdsPLaygroundDeployAppAwsCliLayer75473561": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "/opt/awscli/aws",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "RdsPLaygroundDeployAppCustomResourceFFBD4910": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DestinationBucketName": Object {
+          "Ref": "rdsPlaygroundappS3DE888E68",
+        },
+        "Prune": true,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "Arn",
+          ],
+        },
+        "SourceBucketNames": Array [
+          Object {
+            "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4",
+          },
+        ],
+        "SourceObjectKeys": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3VersionKey7D4DBC50",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3VersionKey7D4DBC50",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "Custom::CDKBucketDeployment",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "RdsPLaygroundRdsConstructrdsPlaygroundrds30059AB2": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "AllocatedStorage": "100",
+        "CopyTagsToSnapshot": true,
+        "DBInstanceClass": "db.t2.micro",
+        "DBSubnetGroupName": Object {
+          "Ref": "RdsPLaygroundRdsConstructrdsPlaygroundrdsSubnetGroup7FF25E5D",
+        },
+        "Engine": "mysql",
+        "EngineVersion": "5.7.33",
+        "MasterUserPassword": "password",
+        "MasterUsername": "user",
+        "MaxAllocatedStorage": 200,
+        "PubliclyAccessible": false,
+        "StorageType": "gp2",
+        "VPCSecurityGroups": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F",
+              "GroupId",
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::RDS::DBInstance",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "RdsPLaygroundRdsConstructrdsPlaygroundrdsSubnetGroup7FF25E5D": Object {
+      "Properties": Object {
+        "DBSubnetGroupDescription": "Subnet group for rdsPlayground-rds database",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1Subnet73310F64",
+          },
+          Object {
+            "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2Subnet2FB51059",
+          },
+        ],
+      },
+      "Type": "AWS::RDS::DBSubnetGroup",
+    },
+    "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/RdsPLaygroundRdsConstruct/rdsSecuritygroup",
+        "GroupName": "rdsPlayground-rds-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "RdsPLaygroundRdsConstructrdsSecuritygroupfromMyTestStackrdsPlaygroundbastionInstancesg8A2DDDCB33069E013E50": Object {
+      "Properties": Object {
+        "Description": "from MyTestStackrdsPlaygroundbastionInstancesg8A2DDDCB:3306",
+        "FromPort": 3306,
+        "GroupId": Object {
+          "Fn::GetAtt": Array [
+            "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F",
+            "GroupId",
+          ],
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": Object {
+          "Fn::GetAtt": Array [
+            "rdsPlaygroundbastionInstancesg94146C3B",
+            "GroupId",
+          ],
+        },
+        "ToPort": 3306,
+      },
+      "Type": "AWS::EC2::SecurityGroupIngress",
+    },
+    "RdsPLaygroundRdsConstructrdsSecuritygroupfromMyTestStackrdsPlaygroundserverInstancesgE1877EF33306462C18EC": Object {
+      "Properties": Object {
+        "Description": "from MyTestStackrdsPlaygroundserverInstancesgE1877EF3:3306",
+        "FromPort": 3306,
+        "GroupId": Object {
+          "Fn::GetAtt": Array [
+            "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F",
+            "GroupId",
+          ],
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": Object {
+          "Fn::GetAtt": Array [
+            "rdsPlaygroundserverInstancesg01D435E6",
+            "GroupId",
+          ],
+        },
+        "ToPort": 3306,
+      },
+      "Type": "AWS::EC2::SecurityGroupIngress",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03": Object {
+      "Properties": Object {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc",
+          },
+        ],
+      },
+      "Type": "AWS::EC2::VPC",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc",
+          },
+        ],
+      },
+      "Type": "AWS::EC2::InternetGateway",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcVPCGWCCDB85A1": Object {
+      "Properties": Object {
+        "InternetGatewayId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1",
+        },
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1RouteTableAssociation6200042D": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1RouteTableDF3C38CF",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1Subnet73310F64",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1RouteTableDF3C38CF": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1Subnet73310F64": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.0.0/18",
+        "MapPublicIpOnLaunch": false,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "isolated",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2RouteTable5555AADF": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2RouteTableAssociation5ACA7D3B": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2RouteTable5555AADF",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2Subnet2FB51059",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2Subnet2FB51059": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            1,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.64.0/18",
+        "MapPublicIpOnLaunch": false,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "isolated",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1DefaultRouteAB9BADD1": Object {
+      "DependsOn": Array [
+        "RdsPLaygroundVpcConstructrdsPlaygroundvpcVPCGWCCDB85A1",
+      ],
+      "Properties": Object {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1",
+        },
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableFFB79762",
+        },
+      },
+      "Type": "AWS::EC2::Route",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableAssociationF8F362F2": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableFFB79762",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableFFB79762": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.128.0/18",
+        "MapPublicIpOnLaunch": true,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "public",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2DefaultRoute4C6E61DB": Object {
+      "DependsOn": Array [
+        "RdsPLaygroundVpcConstructrdsPlaygroundvpcVPCGWCCDB85A1",
+      ],
+      "Properties": Object {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1",
+        },
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTable4A86533E",
+        },
+      },
+      "Type": "AWS::EC2::Route",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTable4A86533E": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTableAssociation43EE096E": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTable4A86533E",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2SubnetAEB7C255",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2SubnetAEB7C255": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            1,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.192.0/18",
+        "MapPublicIpOnLaunch": true,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "public",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcsg44F12083": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc-sg",
+        "GroupName": "rdsPlayground-vpc-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "rdsPlaygroundappS3DE888E68": Object {
+      "DeletionPolicy": "Retain",
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "rdsPlaygroundbastionInstance8FB741DF": Object {
+      "DependsOn": Array [
+        "rdsPlaygroundbastionRoleD91FC0B0",
+      ],
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "IamInstanceProfile": Object {
+          "Ref": "rdsPlaygroundbastionInstanceInstanceProfileC082FD76",
+        },
+        "ImageId": Object {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+        },
+        "InstanceType": "t2.micro",
+        "KeyName": "work",
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "rdsPlaygroundbastionInstancesg94146C3B",
+              "GroupId",
+            ],
+          },
+        ],
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "rdsPlayground-bastionInstance",
+          },
+        ],
+        "UserData": Object {
+          "Fn::Base64": "#!/bin/bash",
+        },
+      },
+      "Type": "AWS::EC2::Instance",
+    },
+    "rdsPlaygroundbastionInstanceInstanceProfileC082FD76": Object {
+      "Properties": Object {
+        "Roles": Array [
+          Object {
+            "Ref": "rdsPlaygroundbastionRoleD91FC0B0",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::InstanceProfile",
+    },
+    "rdsPlaygroundbastionInstancesg94146C3B": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/rdsPlayground-bastionInstance-sg",
+        "GroupName": "playground-rds-ec2-bastion-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:22",
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "ToPort": 22,
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "rdsPlaygroundbastionRoleD91FC0B0": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ec2.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "rdsPlaygroundserverInstance53B81CB0": Object {
+      "DependsOn": Array [
+        "rdsPlaygroundserverRoleDefaultPolicy95F771DB",
+        "rdsPlaygroundserverRole6460AF4B",
+      ],
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "IamInstanceProfile": Object {
+          "Ref": "rdsPlaygroundserverInstanceInstanceProfile36744CFA",
+        },
+        "ImageId": Object {
+          "Fn::FindInMap": Array [
+            "rdsPlaygroundserverInstanceAmiMap7A57CF60",
+            Object {
+              "Ref": "AWS::Region",
+            },
+            "ami",
+          ],
+        },
+        "InstanceType": "t2.micro",
+        "KeyName": "work",
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "rdsPlaygroundserverInstancesg01D435E6",
+              "GroupId",
+            ],
+          },
+        ],
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "rdsPlayground-serverInstance",
+          },
+        ],
+        "UserData": Object {
+          "Fn::Base64": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "#!/bin/bash
+yum update -y
+yum install -y mariadb-server
+echo \\"
+      #!/bin/bash
+      export APP_PORT=8080
+      export APP_RDS_CONNECTION_STRING=mysql://user:password@",
+                Object {
+                  "Fn::GetAtt": Array [
+                    "RdsPLaygroundRdsConstructrdsPlaygroundrds30059AB2",
+                    "Endpoint.Address",
+                  ],
+                },
+                ":3306/test
+      \\" >/home/ec2-user/environment.sh
+aws s3 sync s3://",
+                Object {
+                  "Ref": "rdsPlaygroundappS3DE888E68",
+                },
+                " /home/ec2-user/app/
+chown ec2-user -R /home/ec2-user/app/
+systemctl enable app.service
+systemctl start app.service",
+              ],
+            ],
+          },
+        },
+      },
+      "Type": "AWS::EC2::Instance",
+    },
+    "rdsPlaygroundserverInstanceInstanceProfile36744CFA": Object {
+      "Properties": Object {
+        "Roles": Array [
+          Object {
+            "Ref": "rdsPlaygroundserverRole6460AF4B",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::InstanceProfile",
+    },
+    "rdsPlaygroundserverInstancesg01D435E6": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/rdsPlayground-serverInstance-sg",
+        "GroupName": "rdsPlayground-serverInstance-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:8080",
+            "FromPort": 8080,
+            "IpProtocol": "tcp",
+            "ToPort": 8080,
+          },
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:443",
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:22",
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "ToPort": 22,
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "rdsPlaygroundserverRole6460AF4B": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ec2.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "rdsPlaygroundserverRoleDefaultPolicy95F771DB": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject",
+                "s3:ListBucket",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "rdsPlaygroundappS3DE888E68",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "rdsPlaygroundappS3DE888E68",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "rdsPlaygroundserverRoleDefaultPolicy95F771DB",
+        "Roles": Array [
+          Object {
+            "Ref": "rdsPlaygroundserverRole6460AF4B",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+  },
+}
+`;
+
+exports[`playground this test shows you the drift from last commited code 1`] = `
+Object {
+  "Mappings": Object {
+    "rdsPlaygroundserverInstanceAmiMap7A57CF60": Object {
+      "eu-west-2": Object {
+        "ami": "ami-0440d46c51f4e0817",
+      },
+    },
+  },
+  "Outputs": Object {
+    "RdsPLaygroundRdsConstructrdsEndpointA5D7198A": Object {
+      "Description": "rds endpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "RdsPLaygroundRdsConstructrdsPlaygroundrds30059AB2",
+          "Endpoint.Address",
+        ],
+      },
+    },
+    "rdsPlaygroundappS3bucketName": Object {
+      "Description": "rdsPlayground-appS3-bucketName",
+      "Value": Object {
+        "Ref": "rdsPlaygroundappS3DE888E68",
+      },
+    },
+    "rdsPlaygroundbastionInstanceoutput": Object {
+      "Description": "endpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "rdsPlaygroundbastionInstance8FB741DF",
+          "PublicDnsName",
+        ],
+      },
+    },
+    "rdsPlaygroundserverInstanceoutput": Object {
+      "Description": "endpoint",
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "rdsPlaygroundserverInstance53B81CB0",
+          "PublicDnsName",
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6ArtifactHashAFBF80C1": Object {
+      "Description": "Artifact hash for asset \\"74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6\\"",
+      "Type": "String",
+    },
+    "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4": Object {
+      "Description": "S3 bucket for asset \\"74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6\\"",
+      "Type": "String",
+    },
+    "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3VersionKey7D4DBC50": Object {
+      "Description": "S3 key for asset version \\"74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6\\"",
+      "Type": "String",
+    },
+    "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfArtifactHash85F58E48": Object {
+      "Description": "Artifact hash for asset \\"c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf\\"",
+      "Type": "String",
+    },
+    "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3Bucket55EFA30C": Object {
+      "Description": "S3 bucket for asset \\"c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf\\"",
+      "Type": "String",
+    },
+    "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70": Object {
+      "Description": "S3 key for asset version \\"c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3": Object {
+      "Description": "Artifact hash for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7": Object {
+      "Description": "S3 bucket for asset \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F": Object {
+      "Description": "S3 key for asset version \\"e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68\\"",
+      "Type": "String",
+    },
+    "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": Object {
+      "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2",
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+    },
+  },
+  "Resources": Object {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": Object {
+      "DependsOn": Array [
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3Bucket55EFA30C",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.handler",
+        "Layers": Array [
+          Object {
+            "Ref": "RdsPLaygroundDeployAppAwsCliLayer75473561",
+          },
+        ],
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.6",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4",
+                      },
+                    ],
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "arn:",
+                      Object {
+                        "Ref": "AWS::Partition",
+                      },
+                      ":s3:::",
+                      Object {
+                        "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4",
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": Array [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "rdsPlaygroundappS3DE888E68",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "rdsPlaygroundappS3DE888E68",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "Roles": Array [
+          Object {
+            "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "RdsPLaygroundDeployAppAwsCliLayer75473561": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "/opt/awscli/aws",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "RdsPLaygroundDeployAppCustomResourceFFBD4910": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "DestinationBucketName": Object {
+          "Ref": "rdsPlaygroundappS3DE888E68",
+        },
+        "Prune": true,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "Arn",
+          ],
+        },
+        "SourceBucketNames": Array [
+          Object {
+            "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3BucketFFCF89B4",
+          },
+        ],
+        "SourceObjectKeys": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3VersionKey7D4DBC50",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters74fbb833d152edbc86ba1492c04996038385b71302937246a46eee018598fca6S3VersionKey7D4DBC50",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "Custom::CDKBucketDeployment",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "RdsPLaygroundRdsConstructrdsPlaygroundrds30059AB2": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "AllocatedStorage": "100",
+        "CopyTagsToSnapshot": true,
+        "DBInstanceClass": "db.t2.micro",
+        "DBSubnetGroupName": Object {
+          "Ref": "RdsPLaygroundRdsConstructrdsPlaygroundrdsSubnetGroup7FF25E5D",
+        },
+        "Engine": "mysql",
+        "EngineVersion": "5.7.33",
+        "MasterUserPassword": "password",
+        "MasterUsername": "user",
+        "MaxAllocatedStorage": 200,
+        "PubliclyAccessible": false,
+        "StorageType": "gp2",
+        "VPCSecurityGroups": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F",
+              "GroupId",
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::RDS::DBInstance",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "RdsPLaygroundRdsConstructrdsPlaygroundrdsSubnetGroup7FF25E5D": Object {
+      "Properties": Object {
+        "DBSubnetGroupDescription": "Subnet group for rdsPlayground-rds database",
+        "SubnetIds": Array [
+          Object {
+            "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1Subnet73310F64",
+          },
+          Object {
+            "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2Subnet2FB51059",
+          },
+        ],
+      },
+      "Type": "AWS::RDS::DBSubnetGroup",
+    },
+    "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/RdsPLaygroundRdsConstruct/rdsSecuritygroup",
+        "GroupName": "rdsPlayground-rds-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "RdsPLaygroundRdsConstructrdsSecuritygroupfromMyTestStackrdsPlaygroundbastionInstancesg8A2DDDCB33069E013E50": Object {
+      "Properties": Object {
+        "Description": "from MyTestStackrdsPlaygroundbastionInstancesg8A2DDDCB:3306",
+        "FromPort": 3306,
+        "GroupId": Object {
+          "Fn::GetAtt": Array [
+            "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F",
+            "GroupId",
+          ],
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": Object {
+          "Fn::GetAtt": Array [
+            "rdsPlaygroundbastionInstancesg94146C3B",
+            "GroupId",
+          ],
+        },
+        "ToPort": 3306,
+      },
+      "Type": "AWS::EC2::SecurityGroupIngress",
+    },
+    "RdsPLaygroundRdsConstructrdsSecuritygroupfromMyTestStackrdsPlaygroundserverInstancesgE1877EF33306462C18EC": Object {
+      "Properties": Object {
+        "Description": "from MyTestStackrdsPlaygroundserverInstancesgE1877EF3:3306",
+        "FromPort": 3306,
+        "GroupId": Object {
+          "Fn::GetAtt": Array [
+            "RdsPLaygroundRdsConstructrdsSecuritygroup0218AD1F",
+            "GroupId",
+          ],
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": Object {
+          "Fn::GetAtt": Array [
+            "rdsPlaygroundserverInstancesg01D435E6",
+            "GroupId",
+          ],
+        },
+        "ToPort": 3306,
+      },
+      "Type": "AWS::EC2::SecurityGroupIngress",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03": Object {
+      "Properties": Object {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsHostnames": true,
+        "EnableDnsSupport": true,
+        "InstanceTenancy": "default",
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc",
+          },
+        ],
+      },
+      "Type": "AWS::EC2::VPC",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc",
+          },
+        ],
+      },
+      "Type": "AWS::EC2::InternetGateway",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcVPCGWCCDB85A1": Object {
+      "Properties": Object {
+        "InternetGatewayId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1",
+        },
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1RouteTableAssociation6200042D": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1RouteTableDF3C38CF",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1Subnet73310F64",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1RouteTableDF3C38CF": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet1Subnet73310F64": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.0.0/18",
+        "MapPublicIpOnLaunch": false,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "isolated",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2RouteTable5555AADF": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2RouteTableAssociation5ACA7D3B": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2RouteTable5555AADF",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2Subnet2FB51059",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcisolatedSubnet2Subnet2FB51059": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            1,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.64.0/18",
+        "MapPublicIpOnLaunch": false,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "isolated",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Isolated",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/isolatedSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1DefaultRouteAB9BADD1": Object {
+      "DependsOn": Array [
+        "RdsPLaygroundVpcConstructrdsPlaygroundvpcVPCGWCCDB85A1",
+      ],
+      "Properties": Object {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1",
+        },
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableFFB79762",
+        },
+      },
+      "Type": "AWS::EC2::Route",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableAssociationF8F362F2": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableFFB79762",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1RouteTableFFB79762": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.128.0/18",
+        "MapPublicIpOnLaunch": true,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "public",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2DefaultRoute4C6E61DB": Object {
+      "DependsOn": Array [
+        "RdsPLaygroundVpcConstructrdsPlaygroundvpcVPCGWCCDB85A1",
+      ],
+      "Properties": Object {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcIGW85B8D3B1",
+        },
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTable4A86533E",
+        },
+      },
+      "Type": "AWS::EC2::Route",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTable4A86533E": Object {
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::RouteTable",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTableAssociation43EE096E": Object {
+      "Properties": Object {
+        "RouteTableId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2RouteTable4A86533E",
+        },
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2SubnetAEB7C255",
+        },
+      },
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet2SubnetAEB7C255": Object {
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            1,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "CidrBlock": "10.0.192.0/18",
+        "MapPublicIpOnLaunch": true,
+        "Tags": Array [
+          Object {
+            "Key": "aws-cdk:subnet-name",
+            "Value": "public",
+          },
+          Object {
+            "Key": "aws-cdk:subnet-type",
+            "Value": "Public",
+          },
+          Object {
+            "Key": "Name",
+            "Value": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc/publicSubnet2",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::Subnet",
+    },
+    "RdsPLaygroundVpcConstructrdsPlaygroundvpcsg44F12083": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/RdsPLaygroundVpcConstruct/rdsPlayground-vpc-sg",
+        "GroupName": "rdsPlayground-vpc-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "rdsPlaygroundappS3DE888E68": Object {
+      "DeletionPolicy": "Retain",
+      "Type": "AWS::S3::Bucket",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "rdsPlaygroundbastionInstance8FB741DF": Object {
+      "DependsOn": Array [
+        "rdsPlaygroundbastionRoleD91FC0B0",
+      ],
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "IamInstanceProfile": Object {
+          "Ref": "rdsPlaygroundbastionInstanceInstanceProfileC082FD76",
+        },
+        "ImageId": Object {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter",
+        },
+        "InstanceType": "t2.micro",
+        "KeyName": "work",
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "rdsPlaygroundbastionInstancesg94146C3B",
+              "GroupId",
+            ],
+          },
+        ],
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "rdsPlayground-bastionInstance",
+          },
+        ],
+        "UserData": Object {
+          "Fn::Base64": "#!/bin/bash",
+        },
+      },
+      "Type": "AWS::EC2::Instance",
+    },
+    "rdsPlaygroundbastionInstanceInstanceProfileC082FD76": Object {
+      "Properties": Object {
+        "Roles": Array [
+          Object {
+            "Ref": "rdsPlaygroundbastionRoleD91FC0B0",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::InstanceProfile",
+    },
+    "rdsPlaygroundbastionInstancesg94146C3B": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/rdsPlayground-bastionInstance-sg",
+        "GroupName": "playground-rds-ec2-bastion-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:22",
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "ToPort": 22,
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "rdsPlaygroundbastionRoleD91FC0B0": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ec2.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "rdsPlaygroundserverInstance53B81CB0": Object {
+      "DependsOn": Array [
+        "rdsPlaygroundserverRoleDefaultPolicy95F771DB",
+        "rdsPlaygroundserverRole6460AF4B",
+      ],
+      "Properties": Object {
+        "AvailabilityZone": Object {
+          "Fn::Select": Array [
+            0,
+            Object {
+              "Fn::GetAZs": "",
+            },
+          ],
+        },
+        "IamInstanceProfile": Object {
+          "Ref": "rdsPlaygroundserverInstanceInstanceProfile36744CFA",
+        },
+        "ImageId": Object {
+          "Fn::FindInMap": Array [
+            "rdsPlaygroundserverInstanceAmiMap7A57CF60",
+            Object {
+              "Ref": "AWS::Region",
+            },
+            "ami",
+          ],
+        },
+        "InstanceType": "t2.micro",
+        "KeyName": "work",
+        "SecurityGroupIds": Array [
+          Object {
+            "Fn::GetAtt": Array [
+              "rdsPlaygroundserverInstancesg01D435E6",
+              "GroupId",
+            ],
+          },
+        ],
+        "SubnetId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpcpublicSubnet1Subnet813FC608",
+        },
+        "Tags": Array [
+          Object {
+            "Key": "Name",
+            "Value": "rdsPlayground-serverInstance",
+          },
+        ],
+        "UserData": Object {
+          "Fn::Base64": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "#!/bin/bash
+yum update -y
+yum install -y mariadb-server
+echo \\"
+      #!/bin/bash
+      export APP_PORT=8080
+      export APP_RDS_CONNECTION_STRING=mysql://user:password@",
+                Object {
+                  "Fn::GetAtt": Array [
+                    "RdsPLaygroundRdsConstructrdsPlaygroundrds30059AB2",
+                    "Endpoint.Address",
+                  ],
+                },
+                ":3306/test
+      \\" >/home/ec2-user/environment.sh
+aws s3 sync s3://",
+                Object {
+                  "Ref": "rdsPlaygroundappS3DE888E68",
+                },
+                " /home/ec2-user/app/
+chown ec2-user -R /home/ec2-user/app/
+systemctl enable app.service
+systemctl start app.service",
+              ],
+            ],
+          },
+        },
+      },
+      "Type": "AWS::EC2::Instance",
+    },
+    "rdsPlaygroundserverInstanceInstanceProfile36744CFA": Object {
+      "Properties": Object {
+        "Roles": Array [
+          Object {
+            "Ref": "rdsPlaygroundserverRole6460AF4B",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::InstanceProfile",
+    },
+    "rdsPlaygroundserverInstancesg01D435E6": Object {
+      "Properties": Object {
+        "GroupDescription": "MyTestStack/rdsPlayground-serverInstance-sg",
+        "GroupName": "rdsPlayground-serverInstance-sg",
+        "SecurityGroupEgress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1",
+          },
+        ],
+        "SecurityGroupIngress": Array [
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:8080",
+            "FromPort": 8080,
+            "IpProtocol": "tcp",
+            "ToPort": 8080,
+          },
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:443",
+            "FromPort": 443,
+            "IpProtocol": "tcp",
+            "ToPort": 443,
+          },
+          Object {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "from 0.0.0.0/0:22",
+            "FromPort": 22,
+            "IpProtocol": "tcp",
+            "ToPort": 22,
+          },
+        ],
+        "VpcId": Object {
+          "Ref": "RdsPLaygroundVpcConstructrdsPlaygroundvpc8AC57C03",
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroup",
+    },
+    "rdsPlaygroundserverRole6460AF4B": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      "ec2.",
+                      Object {
+                        "Ref": "AWS::URLSuffix",
+                      },
+                    ],
+                  ],
+                },
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "rdsPlaygroundserverRoleDefaultPolicy95F771DB": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "s3:GetObject",
+                "s3:ListBucket",
+              ],
+              "Effect": "Allow",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "rdsPlaygroundappS3DE888E68",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "rdsPlaygroundappS3DE888E68",
+                          "Arn",
+                        ],
+                      },
+                      "/*",
+                    ],
+                  ],
+                },
+              ],
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "rdsPlaygroundserverRoleDefaultPolicy95F771DB",
+        "Roles": Array [
+          Object {
+            "Ref": "rdsPlaygroundserverRole6460AF4B",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+  },
+}
+`;
